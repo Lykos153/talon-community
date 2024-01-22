@@ -129,13 +129,10 @@ def letters(m) -> str:
 
 ctx = Context()
 modifier_keys = {
-    # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
-    "many": "cmd",
+    "hype": "alt",  #'alter': 'alt',
     "troll": "ctrl",  #'troll':   'ctrl',
-    "option": "alt",
     "ship": "shift",  #'sky':     'shift',
-    "super": "super",
+    "soup": "super",
 }
 if app.platform == "mac":
     modifier_keys["command"] = "cmd"
@@ -148,13 +145,6 @@ ctx.lists["self.letter"] = alphabet_list
 # `dictation_only_punctuation_words` is for punctuation words that you only
 # want to be available during dictation, not command mode
 punctuation_words = {
-    # TODO: I'm not sure why we need these, I think it has something to do with
-    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
-    "`": "`",
-    ",": ",",  # <== these things
-    "at sign": "@",
-    # Currencies
-    "pound sign": "£",
 }
 
 dictation_only_punctuation_words = {
@@ -175,6 +165,10 @@ dictation_only_punctuation_words = {
     "asterisk": "*",
     "number sign": "#",
     "percent sign": "%",
+    "at sign": "@",
+    # Currencies
+    "euro sign": "€",
+    "dollar sign": "$",
 }
 
 immune_symbol_key_words = {
@@ -213,6 +207,34 @@ symbol_key_words = {
     "semi": ";",
     "stack": ":",
     "drip": ",",
+       
+    # "same": ";",
+    # "clause": ":",
+    # "slash": "/",
+    # "ask": "?",
+    # "yell": "!",
+    # "star": "*",
+    # "hash": "#",
+    # "mood": "%",
+    # "snail": "@",
+    # "gain": "&",
+    # "quid": "$",
+    # "mine": "-",
+    # "wax": "(",
+    # "wayne": ")",
+    # "quote": "'",
+    # "brick": "[",
+    # "brack": "]",
+    # "backslash": "\\",
+    # "plus": "+",
+    # "tide": "~",
+    # "score": "_",
+    # "curl": "{",
+    # "crimp": "}",
+    # "small": "<",
+    # "big": ">",
+    # "blunt": "^",
+    # "spoke": '"',
 }
 
 # make punctuation words also included in {user.symbol_keys}
@@ -231,12 +253,10 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    # "end",
-    # "home",
-    # "insert",
-    "pagedown",
-    "pageup",
-    "tab",
+    "end",
+    "home",
+    "insert",
+    "space",
 ]
 
 alternate_keys = {
@@ -245,8 +265,14 @@ alternate_keys = {
     "scratch": "backspace",
     "scrape": "escape",
     "void": "space",
-    "page up": "pageup",
-    "page down": "pagedown",
+    "real": "pageup",
+    "page": "pagedown",
+
+    # "hack": "backspace",
+    # "toss": "delete",
+    # "yes": "enter",
+    # "act": "escape",
+    "tabby": "tab",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
